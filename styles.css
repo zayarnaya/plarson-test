@@ -125,14 +125,15 @@ body {
 }
 
 .form__button {
+  height: fit-content;
+  padding: 5px;
+  align-self: flex-end;
   border: none;
   border-radius: 3px;
   background: var(--color-turqoise);
   color: var(--color-white);
   font-weight: bold;
-  height: fit-content;
-  padding: 5px;
-  align-self: flex-end;
+  transition: background-color .2s;
 }
 
 .form__button:hover {
