@@ -1,0 +1,15 @@
+{
+  "name": "plarson-html",
+  "version": "1.0.0",
+  "description": "тестовое задание по HTML Вероника Заярная",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node index",
+    "server": "node index"
+  },
+  "author": "Veronika Zayarnaya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

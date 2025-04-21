@@ -1,0 +1,140 @@
+:root {
+  --color-blue: #3976d3;
+  --color-turqoise: #53a3ba;
+  --color-accent: #53a3ba33;
+  --color-white: white;
+  --h-header: 50px;
+  --h-footer: 100px;
+  --w-aside: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: var(--h-header) calc(
+      100vh - (var(--h-footer) + var(--h-header))
+    ) var(--h-footer);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  height: var(--h-header);
+  background: linear-gradient(
+    160deg,
+    var(--color-blue) 0%,
+    var(--color-turqoise) 100%
+  );
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--color-white);
+  font-weight: bold;
+  line-height: var(--h-header);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: var(--w-aside) 1fr;
+}
+
+.aside,
+.chat {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.aside {
+  width: var(--w-aside);
+  padding-left: 5px;
+}
+
+.users,
+.messages {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.users {
+  gap: 5px;
+  padding: 5px;
+}
+
+.users__user {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.users__user_me,
+.message__nickname,
+.form__label {
+  font-weight: bold;
+}
+
+.chat {
+  border-left: 2px solid var(--color-blue);
+  width: calc(100% - 2px);
+}
+
+.messages {
+  gap: 10px;
+}
+
+.message:nth-child(even) {
+  background-color: var(--color-accent);
+}
+
+.footer,
+.form,
+.form__button {
+  display: flex;
+}
+
+.footer {
+  height: var(--h-footer);
+  width: 100%;
+  background: linear-gradient(
+    160deg,
+    var(--color-turqoise) 0%,
+    var(--color-blue) 100%
+  );
+}
+
+.form {
+  justify-content: center;
+  gap: 5px;
+  margin: auto;
+}
+
+.form__label {
+  color: var(--color-white);
+}
+
+.form__input {
+  border: none;
+  border-radius: 5px;
+}
+
+.form__button {
+  border: none;
+  border-radius: 3px;
+  background: var(--color-turqoise);
+  color: var(--color-white);
+  font-weight: bold;
+  height: fit-content;
+  padding: 5px;
+  align-self: flex-end;
+}
+
+.form__button:hover {
+  background: var(--color-blue);
+}
